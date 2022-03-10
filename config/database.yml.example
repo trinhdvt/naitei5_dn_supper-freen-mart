@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: supper_freen_mart_dev
+
+test:
+  <<: *default
+  database: supper_freen_mart_test
+
+production:
+  <<: *default
+  database: supper_freen_mart_production
+  username: supper_freen_mart
+  password: <%= ENV['PRODUCTION_DB_PASSWORD'] %>
