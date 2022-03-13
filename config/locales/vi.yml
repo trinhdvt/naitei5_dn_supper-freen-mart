@@ -15,7 +15,23 @@ vi:
     error_messages:
       prefix: "Bạn có %{err_suffix} "
       singular: "lỗi"
-
+  products:
+    product:
+      add_product: "Thêm Vào Giỏ"
+    static_pages:
+      home:
+        trending: "Sản phẩm thịnh hành"
+        newest: "Sản phẩm mới nhất"
+    number:
+      currency:
+        format:
+          delimiter: "."
+          format: "%n %u"
+          precision: 0
+          separator: ","
+          significant: false
+          strip_insignificant_zeros: false
+          unit: "đồng"
   users:
     new:
       title: "Đăng ký"
@@ -43,3 +59,21 @@ vi:
     edit:
       success_message: "Đã kích hoạt tài khoản!"
       failure_message: "Liên kết không hợp lệ"
+    activerecord:
+      attributes:
+        user:
+          name: "Tên"
+          password: "Mật khẩu"
+          password_confirmation: "Mật khẩu xác nhận"
+
+    user_mailer:
+      account_activation:
+        subject: "Kích hoạt tài khoản"
+        greeting: "Xin chào"
+        body: "Chào mừng bạn đến với Siêu thị xanh. Hãy nhấp vào đường truy cập bên dưới để kích hoạt tài khoản nhé:"
+        activate_link: "Kích hoạt"
+
+    account_activations:
+      edit:
+        success_message: "Đã kích hoạt tài khoản!"
+        failure_message: "Liên kết không hợp lệ"

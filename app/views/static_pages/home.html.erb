@@ -1,5 +1,9 @@
 <% provide :title, t("base_title") %>
 
 <div class="home">
-
+  <%= render "shared/product_feed", products: @trending_products,
+             pagy: @trending_pagy, header: t(".trending") %>
+  <hr>
+  <%= render "shared/product_feed", products: @new_products,
+             pagy: @new_pagy, header: t(".newest") %>
 </div>

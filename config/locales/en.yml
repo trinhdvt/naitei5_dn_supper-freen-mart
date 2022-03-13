@@ -15,7 +15,18 @@ en:
     error_messages:
       prefix: "The form contains %{err_suffix} "
       singular: "error"
-
+  products:
+    product:
+      add_product: "Add to cart"
+    static_pages:
+      home:
+        trending: "Trending Products"
+        newest: "Newest Products"
+    number:
+      currency:
+        format:
+          format: "%n %u"
+          unit: "USD"
   users:
     new:
       title: "Sign up"
@@ -41,3 +52,19 @@ en:
     edit:
       success_message: "Account activated!"
       failure_message: "Invalid activation link"
+    activerecord:
+      attributes:
+        user:
+          password_confirmation: "Password Confirmation"
+
+    user_mailer:
+      account_activation:
+        subject: "Account activation"
+        greeting: "Hi"
+        body: "Welcome to Super Green Mart! Click on the link below to activate your account:"
+        activate_link: "Activate"
+
+    account_activations:
+      edit:
+        success_message: "Account activated!"
+        failure_message: "Invalid activation link"

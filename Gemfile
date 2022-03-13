@@ -15,6 +15,7 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.4", ">= 6.0.4.7"
 gem "rails-i18n", "~> 6.0"
 gem "sass-rails", ">= 6"
+gem "stringex", "~> 2.8", ">= 2.8.5"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
