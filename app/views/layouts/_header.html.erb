@@ -1,0 +1,40 @@
+<header>
+  <div class="container">
+    <div class="header__navbar">
+      <div class="header__navbar-left">
+        <%= link_to "SGM", root_path, class: "menu-logo" %>
+        <div class="form-container">
+          <form>
+            <input
+              type="text"
+              class="form-input"
+            />
+            <input
+              type="button"
+              class="form-button"
+              value="Search"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="header__navbar-right">
+        <div class="header__navbar-right-menu">
+          <%= link_to t(".sign_up"), "#" %>
+          <%= link_to t(".sign_in"), "#" %>
+        </div>
+        <div class="cart">
+          <%= link_to "#" do %>
+            <div class="cart-wrapper">
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+              <span class="cart-wrapper-amount">0</span>
+            </div>
+
+            <div>
+              <%= t ".cart" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

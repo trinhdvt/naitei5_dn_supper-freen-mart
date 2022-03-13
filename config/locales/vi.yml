@@ -1,2 +1,17 @@
 vi:
-  hello: "Alo mike fend"
+  base_title: "Siêu thị xanh"
+
+  layouts:
+    header:
+      search: "Tìm kiếm"
+      sign_in: "Đăng nhập"
+      sign_up: "Đăng ký"
+      cart: "Giỏ hàng"
+    footer:
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
+
+  shared:
+    error_messages:
+      prefix: "Bạn có %{err_suffix} "
+      singular: "lỗi"
