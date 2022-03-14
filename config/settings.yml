@@ -9,7 +9,7 @@ digits:
 
 avatar:
   default_avatar: "https://secure.gravatar.com/avatar"
-trending:
-  max_item: 10
-newest:
-  max_item: 20
+item:
+  max_item_10: 10
+rating:
+  max_5: 5

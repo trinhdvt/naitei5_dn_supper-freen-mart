@@ -3,7 +3,9 @@
     <%= image_tag product.image, alt: product.name, class: "img-prd" %>
   </div>
   <div class="content-product">
-    <h3 class="content-product-h3"><%= product.name %></h3>
+    <%= link_to product_path(id: product.slug) do %>
+      <h3 class="content-product-h3"><%= product.name %></h3>
+    <% end %>
     <div class="content-product-details">
       <div class="price">
         <span class="money"><%= number_to_currency(product.price) %></span>
