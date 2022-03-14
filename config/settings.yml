@@ -1,0 +1,11 @@
+regex:
+  email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
+
+digits:
+  name_max_length: 50
+  email_max_length: 255
+  password_min_length: 6
+  password_max_length: 32
+
+avatar:
+  default_avatar: "https://secure.gravatar.com/avatar"
