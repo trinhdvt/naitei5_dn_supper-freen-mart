@@ -1,0 +1,33 @@
+@import 'color';
+
+footer {
+  margin-top: 5px;
+  padding-top: 15px;
+  color: $gray-light;
+
+  p {
+    font-size: 14px;
+  }
+
+  a {
+    color: $gray;
+
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}

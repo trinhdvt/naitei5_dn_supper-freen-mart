@@ -1,0 +1,28 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'color.scss';
+
+main {
+  background-color: $gray-background;
+}
+
+.home {
+  min-height: 80vh;
+}
+
+#error_explanation {
+  color: $red;
+
+  ul {
+    color: $red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}

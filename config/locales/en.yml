@@ -1,2 +1,17 @@
 en:
-  hello: "Hello world"
+  base_title: "Super Green Mart"
+
+  layouts:
+    header:
+      search: "Search"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      cart: "Cart"
+    footer:
+      en: "English"
+      vi: "Vietnamese"
+
+  shared:
+    error_messages:
+      prefix: "The form contains %{err_suffix} "
+      singular: "error"
