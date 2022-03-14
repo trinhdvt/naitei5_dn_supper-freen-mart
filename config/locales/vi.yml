@@ -15,3 +15,31 @@ vi:
     error_messages:
       prefix: "Bạn có %{err_suffix} "
       singular: "lỗi"
+
+  users:
+    new:
+      title: "Đăng ký"
+      welcome: "Đăng ký"
+      submit: "Tạo tài khoản"
+    create:
+      success_message: "Hãy kiểm tra email của bạn để kích hoạt tài khoản"
+      failure_message: "Đăng ký thất bại!"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Tên"
+        password: "Mật khẩu"
+        password_confirmation: "Mật khẩu xác nhận"
+
+  user_mailer:
+    account_activation:
+      subject: "Kích hoạt tài khoản"
+      greeting: "Xin chào"
+      body: "Chào mừng bạn đến với Siêu thị xanh. Hãy nhấp vào đường truy cập bên dưới để kích hoạt tài khoản nhé:"
+      activate_link: "Kích hoạt"
+
+  account_activations:
+    edit:
+      success_message: "Đã kích hoạt tài khoản!"
+      failure_message: "Liên kết không hợp lệ"

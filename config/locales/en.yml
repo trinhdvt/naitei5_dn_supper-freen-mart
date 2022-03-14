@@ -15,3 +15,29 @@ en:
     error_messages:
       prefix: "The form contains %{err_suffix} "
       singular: "error"
+
+  users:
+    new:
+      title: "Sign up"
+      welcome: "Sign up"
+      submit: "Create my account"
+    create:
+      success_message: "Please check your email to activate your account."
+      failure_message: "Registration failed!"
+
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: "Password Confirmation"
+
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+      greeting: "Hi"
+      body: "Welcome to Super Green Mart! Click on the link below to activate your account:"
+      activate_link: "Activate"
+
+  account_activations:
+    edit:
+      success_message: "Account activated!"
+      failure_message: "Invalid activation link"
