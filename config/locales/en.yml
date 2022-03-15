@@ -7,6 +7,10 @@ en:
       sign_in: "Sign in"
       sign_up: "Sign up"
       cart: "Cart"
+      account: "Account"
+      orders: "Orders"
+      settings: "Settings"
+      sign_out: "Sign out"
     footer:
       en: "English"
       vi: "Vietnamese"
@@ -32,7 +36,6 @@ en:
       format:
         format: "%n %u"
         unit: "USD"
-
   users:
     new:
       title: "Sign up"
@@ -63,3 +66,15 @@ en:
     home:
       trending: "Trending Products"
       newest: "Newest Products"
+  sessions:
+    new:
+      title: "Sign in"
+      welcome: "Sign in"
+      submit: "Sign in"
+      password_label: "Password"
+      forgot_password: "Forgot Password"
+      new_user_question: "New user?"
+      sign_up: "Sign up"
+    create:
+      unactivated_message: "Account not activated. Check your email for the activation link."
+      failure_message: "Invalid email/password combination"

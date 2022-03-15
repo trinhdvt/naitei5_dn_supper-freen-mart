@@ -7,6 +7,10 @@ vi:
       sign_in: "Đăng nhập"
       sign_up: "Đăng ký"
       cart: "Giỏ hàng"
+      account: "Tài khoản"
+      orders: "Các đơn hàng"
+      settings: "Cài đặt"
+      sign_out: "Đăng xuất"
     footer:
       en: "Tiếng Anh"
       vi: "Tiếng Việt"
@@ -38,7 +42,6 @@ vi:
         significant: false
         strip_insignificant_zeros: false
         unit: "đồng"
-
   users:
     new:
       title: "Đăng ký"
@@ -71,3 +74,15 @@ vi:
     home:
       trending: "Sản phẩm thịnh hành"
       newest: "Sản phẩm mới nhất"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      welcome: "Đăng nhập"
+      submit: "Đăng nhập"
+      password_label: "Mật khẩu"
+      forgot_password: "Quên mật khẩu"
+      new_user_question: "Người dùng mới?"
+      sign_up: "Đăng ký"
+    create:
+      unactivated_message: "Tài khoản chưa kích hoạt. Vui lòng kiểm tra email"
+      failure_message: "Sai email hoặc mật khẩu"

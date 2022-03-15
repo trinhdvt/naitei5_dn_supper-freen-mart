@@ -86,8 +86,14 @@ header {
             text-decoration: none;
           }
 
-          a:first-child {
-            margin-right: 16px;
+          .first-link {
+            margin-right: 12px;
+          }
+
+          .dropdown-menu {
+            a {
+              color: black;
+            }
           }
         }
 

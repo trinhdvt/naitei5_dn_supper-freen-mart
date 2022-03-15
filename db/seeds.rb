@@ -1,5 +1,7 @@
 def create_user
   User.create!(name: "dvt", email: "dvt@gmail.com",
+                password: "123456",
+                password_confirmation: "123456",
                activated: true)
 end
 
@@ -63,4 +65,3 @@ create_user
 create_category
 create_products
 20.times {|_| create_order User.first}
-
