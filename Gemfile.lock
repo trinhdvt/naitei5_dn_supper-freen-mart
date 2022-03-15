@@ -281,6 +281,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stringex (2.8.5)
     thor (1.2.1)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
@@ -346,6 +347,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  stringex (~> 2.8, >= 2.8.5)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
