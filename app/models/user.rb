@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = Settings.regex.email
 
-  attr_accessor :activated_token
+  attr_accessor :activated_token, :session_token
   before_save :downcase_email
   before_create :create_activated_digest, :create_default_avatar
 
@@ -56,6 +56,15 @@ class User < ApplicationRecord
 
   def activate
     update_column :activated, true
+  end
+
+  def remember
+    self.session_token = User.new_token
+    update_column :session_digest, User.digest(session_token)
+  end
+
+  def forget
+    update_column :session_digest, nil
   end
 
   private

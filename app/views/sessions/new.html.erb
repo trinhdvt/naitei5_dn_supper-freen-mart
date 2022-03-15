@@ -1,0 +1,22 @@
+<%= provide :title, t(".title") %>
+<% provide :button_text, t(".submit") %>
+
+<div class="authentication_container">
+  <div class="form_container">
+    <h1><%= t ".welcome" %></h1>
+    <%= form_for :session, url: signin_path do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, :required => true %>
+
+      <%= f.label :password, t(".password_label") %>
+      <%= link_to t(".forgot_password"), "#" %>
+      <%= f.password_field :password, :required => true %>
+
+      <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    <% end %>
+    <p>
+      <%= t ".new_user_question" %>
+      <%= link_to t(".sign_up"), signup_path %>
+    </p>
+  </div>
+</div>

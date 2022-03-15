@@ -19,8 +19,22 @@
       </div>
       <div class="header__navbar-right">
         <div class="header__navbar-right-menu">
-          <%= link_to t(".sign_up"), signup_path %>
-          <%= link_to t(".sign_in"), "#" %>
+        <% if logged_in? %>
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t ".account" %> <b class="caret"></b>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".orders"), "#" %></li>
+              <li><%= link_to t(".settings"), "#" %></li>
+              <li><%= link_to t(".sign_out"), signout_path, method: :delete %></li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link_to t(".sign_up"), signup_path, class: "first-link" %>
+          <%= link_to t(".sign_in"), signin_path %>
+        <% end %>
         </div>
         <div class="cart">
           <%= link_to "#" do %>
