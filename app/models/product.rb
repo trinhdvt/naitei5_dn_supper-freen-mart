@@ -13,6 +13,12 @@ class Product < ApplicationRecord
 
   before_save :create_slug
 
+  def sold_count
+    order_items.joins(:order)
+               .where(orders: {status: Order.statuses[:received]})
+               .sum(:quantity)
+  end
+
   private
 
   def create_slug

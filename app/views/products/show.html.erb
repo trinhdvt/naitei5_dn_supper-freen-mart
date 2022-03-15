@@ -1,0 +1,60 @@
+<div class="row white_bg">
+  <div class="col-md-4 product_image">
+    <div style='background-image: url("<%= @product.image %>");'>
+    </div>
+  </div>
+  <div class="col-md-8 product_detail">
+    <div>
+      <h3><%= @product.name %></h3>
+      <div class="product_stats">
+        <span class="underline_text"><%= @product.rating %></span>
+        <% Settings.rating.max_5.times do |i| %>
+          <% if i < @product.rating.round %>
+            <span class="glyphicon glyphicon-star color-red"></span>
+          <% else %>
+            <span class="glyphicon glyphicon-star-empty"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <span class="product_stats">
+        <span class="underline_text"><%= @product.reviews.length %></span>
+        <%= t ".rating" %>
+      </span>
+      <span class="product_stats">
+        <span class="underline_text"><%= @product.sold_count %></span>
+        <%= t ".sold" %>
+      </span>
+    </div>
+    <div class="product_price color-red">
+      <%= number_to_currency(@product.price) %>
+    </div>
+    <div class="product_quantity">
+      <span><%= t ".quantity" %></span>
+      <div class="quantity_select">
+        <div class="input_quantity_group">
+          <button class="quantity_btn">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+          <input class="input_quantity" type="text" role="spinbutton" aria-valuenow="1" value="1">
+          <button class="quantity_btn">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+      </div>
+      <span><%= "#{@product.quantity} #{t ".available"}" %></span>
+    </div>
+    <div class=".mg-top-15">
+      <button type="button" class="btn btn-primary" aria-disabled="false">
+        <span><%= t ".add_to_cart" %></span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row product_desc white_bg">
+  <div class="col-lg-12">
+    <h3><%= t ".product_desc" %></h3>
+    <pre>
+      <%= @product.description %>
+    </pre>
+  </div>
+</div>

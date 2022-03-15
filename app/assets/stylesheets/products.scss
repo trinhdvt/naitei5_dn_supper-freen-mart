@@ -1,0 +1,80 @@
+@import "color";
+
+.quantity_select {
+  display: inline-block
+}
+
+.mg-top-15 {
+  margin-top: 15px
+}
+
+.flex {
+  display: flex;
+}
+
+.color-red {
+  color: $red;
+}
+
+.underline_text {
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: underline;
+}
+
+.input_quantity_group {
+  @extend .flex;
+  align-items: center;
+  margin: 0 15px 0 15px;
+
+  .quantity_btn {
+    border: 0.5px solid $gray-light;
+  }
+
+  .input_quantity {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px 0 5px;
+    border: 0.5px solid $gray-light;
+  }
+}
+
+.product_image {
+  @extend .mg-top-15;
+
+  div:first-child {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px
+  }
+}
+
+.product_detail {
+  @extend .flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+
+  .product_stats {
+    display: inline-block;
+    padding: 0 15px;
+    border-right: 1px solid $gray-darker;
+  }
+
+  .product_quantity {
+    justify-content: center
+  }
+
+  .product_price {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+.white_bg {
+  background-color: $white;
+}
+
+.product_desc {
+  margin-top: 20px;
+}
