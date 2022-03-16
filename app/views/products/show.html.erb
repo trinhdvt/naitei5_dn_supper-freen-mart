@@ -28,26 +28,30 @@
     <div class="product_price color-red">
       <%= number_to_currency(@product.price) %>
     </div>
-    <div class="product_quantity">
-      <span><%= t ".quantity" %></span>
-      <div class="quantity_select">
-        <div class="input_quantity_group">
-          <button class="quantity_btn">
-            <span class="glyphicon glyphicon-minus"></span>
-          </button>
-          <input class="input_quantity" type="text" role="spinbutton" aria-valuenow="1" value="1">
-          <button class="quantity_btn">
-            <span class="glyphicon glyphicon-plus"></span>
-          </button>
+    <% if @product.quantity.nonzero? %>
+      <%= form_for(:cart, url: carts_path, remote: true) do |f| %>
+        <%= hidden_field_tag :quantity, @product.quantity, id: "product_max_qtt" %>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <div class="product_quantity">
+          <span><%= t ".quantity" %></span>
+          <div class="quantity_select">
+            <div class="input_quantity_group">
+              <button id="btn-qtt_decr" class="quantity_btn" type="button">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+              <%= f.text_field :quantity, class: "input_quantity", id: "input-qtt", value: "1" %>
+              <button id="btn-qtt_incr" class="quantity_btn" type="button">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </div>
+          </div>
+          <span><%= "#{@product.quantity} #{t ".available"}" %></span>
         </div>
-      </div>
-      <span><%= "#{@product.quantity} #{t ".available"}" %></span>
-    </div>
-    <div class=".mg-top-15">
-      <button type="button" class="btn btn-primary" aria-disabled="false">
-        <span><%= t ".add_to_cart" %></span>
-      </button>
-    </div>
+        <%= f.submit t(".add_to_cart"), class: "btn btn-primary mg-top-15" %>
+      <% end %>
+    <% else %>
+      <h3><%= t ".out_of_stock" %></h3>
+    <% end %>
   </div>
 </div>
 <div class="row product_desc white_bg">
@@ -58,3 +62,5 @@
     </pre>
   </div>
 </div>
+<%= javascript_pack_tag "product_detail" %>
+
