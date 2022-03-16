@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :get_product, :get_quantity, only: :create
+  before_action :handle_param_quantity, :load_product, only: :create
 
   def create
     current_qtt = quantity_in_cart @product.id
@@ -18,20 +18,19 @@ class CartsController < ApplicationController
 
   private
 
-  def get_quantity
-    @quantity = params.require(:cart)
-                      .values_at(:quantity)
-                      .first
-                      .to_i
-    solve_invalid_req t(".invalid_qtt") if @quantity.zero?
+  def handle_param_quantity
+    @quantity = params.dig(:cart, :quantity)&.to_i
+    return if @quantity.positive?
+
+    solve_invalid_req t(".invalid_qtt")
   end
 
-  def get_product
-    product_id = params.require(:cart)
-                       .values_at(:product_id)
-                       .first
+  def load_product
+    product_id = params.dig(:cart, :product_id)
     @product = Product.find_by id: product_id
-    solve_invalid_req t("products.not_found") unless @product
+    return if @product
+
+    solve_invalid_req t("products.not_found")
   end
 
   def solve_invalid_req message
