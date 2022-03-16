@@ -30,6 +30,7 @@ en:
       available: "piece available"
       rating: "rating"
       sold: "sold"
+      out_of_stock: "Out of stock"
 
   number:
     currency:
@@ -78,3 +79,8 @@ en:
     create:
       unactivated_message: "Account not activated. Check your email for the activation link."
       failure_message: "Invalid email/password combination"
+  carts:
+    insufficient: "Amount of product is over quotas"
+    invalid_qtt: "Quantity must be greater than zero"
+    create:
+      success: "This product has been added to your cart"
