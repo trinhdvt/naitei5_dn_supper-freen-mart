@@ -40,7 +40,7 @@
           <%= link_to "#" do %>
             <div class="cart-wrapper">
               <span class="glyphicon glyphicon-shopping-cart"></span>
-              <span class="cart-wrapper-amount">0</span>
+              <span id="cart_amount" class="cart-wrapper-amount"><%= cart_items.size %></span>
             </div>
 
             <div>
