@@ -1,0 +1,55 @@
+<div class="row m-btm-30">
+  <div class="col-md-1 text-center">
+    <input type="checkbox" class="checkbox m-auto">
+  </div>
+  <div class="col-md-4 text-capitalize text-important-bg"><%= t ".product_name" %></div>
+  <div class="col-md-2 text-right text-important-bg"><%= t ".product_price" %></div>
+  <div class="col-md-2 text-center text-important-bg"><%= t ".quantity" %></div>
+  <div class="col-md-2 text-right text-important-bg"><%= t ".total" %></div>
+  <div class="col-md-1">
+    <%= link_to "#", class: "color-black" do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </div>
+</div>
+
+<% @products.each_with_index do |prod, idx| %>
+  <div class="row cart_items">
+    <div class="col-md-1">
+      <input type="checkbox" class="checkbox m-auto">
+    </div>
+
+    <div class="col-md-4">
+      <img src='<%= prod.image %>' alt='<%= prod.name %>'>
+      <%= link_to prod.name, product_path(id: prod.slug) %>
+    </div>
+
+    <div class="col-md-2 text-right text-important">
+      <%= number_to_currency prod.price %>
+    </div>
+
+    <div class="col-md-2">
+      <div class="input_quantity_group m-0">
+        <button id="btn-qtt_decr" class="quantity_btn" type="button">
+          <span class="glyphicon glyphicon-minus"></span>
+        </button>
+
+        <input type="text" class="quantity_input text-center full-width" value="<%= @quantity[idx] %>">
+
+        <button id="btn-qtt_incr" class="quantity_btn" type="button">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-2 color-red text-important text-right">
+      <%= number_to_currency @quantity[idx] * prod.price %>
+    </div>
+
+    <div class="col-md-1">
+      <%= link_to "#", class: "color-black" do %>
+        <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    </div>
+  </div>
+<% end %>

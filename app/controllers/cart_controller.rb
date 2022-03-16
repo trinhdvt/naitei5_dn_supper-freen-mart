@@ -1,5 +1,8 @@
-class CartsController < ApplicationController
+class CartController < ApplicationController
   before_action :handle_param_quantity, :load_product, only: :create
+  before_action :load_cart_products, :verify_cart, only: :index
+
+  def index; end
 
   def create
     current_qtt = quantity_in_cart @product.id
@@ -31,6 +34,18 @@ class CartsController < ApplicationController
     return if @product
 
     solve_invalid_req t("products.not_found")
+  end
+
+  def load_cart_products
+    @cart_product_ids = cart_items.keys.map(&:to_i)
+    @products = Product.where(id: @cart_product_ids)
+  end
+
+  def verify_cart
+    unknown_cart_items = @cart_product_ids - @products.map(&:id)
+    unknown_cart_items.each{|id| update_cart id, 0}
+
+    @quantity = cart_items.values.map(&:to_i)
   end
 
   def solve_invalid_req message

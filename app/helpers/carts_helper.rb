@@ -15,7 +15,11 @@ module CartsHelper
 
   def update_cart product_id, new_quantity
     cart = cart_items
-    cart[product_id] = new_quantity
+    if new_quantity.positive?
+      cart[product_id.to_s] = new_quantity
+    else
+      cart.delete(product_id.to_s)
+    end
     set_cookie CART_KEY, cart
   end
 
