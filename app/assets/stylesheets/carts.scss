@@ -1,0 +1,58 @@
+@import "color";
+
+.text-important {
+  font-weight: bold;
+}
+
+.text-important-bg {
+  @extend .text-important;
+  font-size: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.cart_items {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.m-btm-30 {
+  margin-bottom: 30px;
+}
+
+.m-left-33 {
+  margin-left: 33px;
+}
+
+.order_total {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.pd-top-20 {
+  padding-top: 20px;
+}
+
+.color-black {
+  color: $gray-darker;
+}
+
+.min-width-70 {
+  min-width: 70px;
+}

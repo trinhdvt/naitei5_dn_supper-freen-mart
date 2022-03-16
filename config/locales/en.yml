@@ -79,8 +79,19 @@ en:
     create:
       unactivated_message: "Account not activated. Check your email for the activation link."
       failure_message: "Invalid email/password combination"
-  carts:
+  cart:
     insufficient: "Amount of product is over quotas"
     invalid_qtt: "Quantity must be greater than zero"
     create:
       success: "This product has been added to your cart"
+    order_form:
+      receiver: "Name"
+      phone: "Phone"
+      address: "Address"
+      total: "Total"
+      buy: "Buy"
+    cart:
+      product_name: "Product Name"
+      product_price: "Price"
+      quantity: "Quantity"
+      total: "Total"

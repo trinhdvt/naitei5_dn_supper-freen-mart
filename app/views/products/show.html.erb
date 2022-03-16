@@ -31,7 +31,7 @@
       <%= number_to_currency(@product.price) %>
     </div>
     <% if @product.quantity.nonzero? %>
-      <%= form_for(:cart, url: carts_path, remote: true) do |f| %>
+      <%= form_for(:cart, url: cart_index_path, remote: true) do |f| %>
         <%= hidden_field_tag :quantity, @product.quantity, id: "product_max_qtt" %>
         <%= f.hidden_field :product_id, value: @product.id %>
         <div class="product_quantity">
