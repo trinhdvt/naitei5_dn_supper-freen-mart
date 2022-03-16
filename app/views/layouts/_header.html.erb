@@ -22,10 +22,13 @@
         <% if logged_in? %>
           <div class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= t ".account" %> <b class="caret"></b>
+                <%= @current_user.name %> <b class="caret"></b>
             </a>
 
             <ul class="dropdown-menu">
+              <% if is_admin? %>
+                <li><%= link_to "Admin", admin_root_path %></li>
+              <% end %>
               <li><%= link_to t(".orders"), "#" %></li>
               <li><%= link_to t(".settings"), "#" %></li>
               <li><%= link_to t(".sign_out"), signout_path, method: :delete %></li>

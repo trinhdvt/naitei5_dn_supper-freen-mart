@@ -9,4 +9,15 @@ class Order < ApplicationRecord
     received: 3,
     rejected: 4
   }, _prefix: true
+
+  scope :newest, ->{order created_at: :desc}
+  scope :status_search, ->(status){where(status: status) if status.present?}
+
+  class << self
+    def status_attributes_for_select
+      statuses.map do |status, id|
+        [I18n.t("statuses.#{status}"), id]
+      end
+    end
+  end
 end

@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <div class="header__navbar">
+      <div class="header__navbar-left">
+        <%= link_to "SGM", root_path, class: "menu-logo" %>
+      </div>
+      <div class="header__navbar-right">
+        <div class="header__navbar-right-menu">
+
+        <% if logged_in? %>
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= @current_user.name %> <b class="caret"></b>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><%= link_to t(".sign_out"), signout_path, method: :delete %></li>
+            </ul>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

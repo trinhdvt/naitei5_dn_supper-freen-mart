@@ -7,13 +7,17 @@ vi:
       sign_in: "Đăng nhập"
       sign_up: "Đăng ký"
       cart: "Giỏ hàng"
-      account: "Tài khoản"
       orders: "Các đơn hàng"
       settings: "Cài đặt"
       sign_out: "Đăng xuất"
     footer:
       en: "Tiếng Anh"
       vi: "Tiếng Việt"
+    admin:
+      users: "Users"
+      categories: "Categories"
+      products: "Products"
+      orders: "Orders"
 
   shared:
     error_messages:
@@ -103,3 +107,24 @@ vi:
       product_price: "Đơn giá"
       quantity: "Số lượng"
       total: "Thành tiền"
+
+  admin:
+    orders:
+      index:
+        title: "Các đơn hàng"
+        status: "Trạng thái"
+        search: "Tìm kiếm"
+        name: "Tên người đặt"
+        phone: "Số điện thoại"
+        status: "Trạng thái"
+        total: "Tổng tiền"
+        order_date: "Ngày đặt"
+        action: "Hành động"
+        edit: "Chỉnh sửa"
+
+  statuses:
+    canceled: "Đã hủy"
+    pending: "Đang chờ"
+    delivering: "Đang vận chuyển"
+    received: "Đã nhận"
+    rejected: "Đã từ chối"
