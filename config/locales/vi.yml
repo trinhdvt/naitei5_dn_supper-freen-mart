@@ -18,6 +18,8 @@ vi:
       categories: "Categories"
       products: "Products"
       orders: "Orders"
+    header_admin:
+      sign_out: "Đăng xuất"
 
   shared:
     error_messages:
@@ -91,7 +93,7 @@ vi:
     create:
       unactivated_message: "Tài khoản chưa kích hoạt. Vui lòng kiểm tra email"
       failure_message: "Sai email hoặc mật khẩu"
-  cart:
+  carts:
     insufficient: "Số lượng sản phẩm trong kho không đủ"
     invalid_qtt: "Số lượng phải lớn hơn 0"
     create:
@@ -107,6 +109,10 @@ vi:
       product_price: "Đơn giá"
       quantity: "Số lượng"
       total: "Thành tiền"
+      del_all: "Xoá toàn bộ giỏ hàng ?"
+      del: "Xoá sản phẩm này khỏi giỏ hàng ?"
+    destroy:
+      empty_cart: "Giỏ hành của bạn đã bị xoá"
 
   admin:
     orders:
@@ -116,7 +122,6 @@ vi:
         search: "Tìm kiếm"
         name: "Tên người đặt"
         phone: "Số điện thoại"
-        status: "Trạng thái"
         total: "Tổng tiền"
         order_date: "Ngày đặt"
         action: "Hành động"
