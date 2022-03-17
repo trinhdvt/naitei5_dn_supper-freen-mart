@@ -6,7 +6,6 @@
 main {
   background-color: $gray-background;
   min-height: 100vh;
-  padding-top: 30px;
 }
 
 #error_explanation {
@@ -128,6 +127,27 @@ main {
       outline: none;
       border: 1px solid $gray-medium-light;
       margin-bottom: 20px;
+    }
+  }
+}
+
+
+.admin_aside {
+  border-right: 1px solid $box-shadow-normal;
+  min-height: 100vh !important;
+
+  ul {
+    padding: 20px;
+    list-style: none;
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid $box-shadow-normal;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $box-shadow-normal;
+      }
     }
   }
 }

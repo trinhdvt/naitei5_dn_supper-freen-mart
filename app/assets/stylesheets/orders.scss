@@ -1,0 +1,37 @@
+@import 'color.scss';
+
+.admin-orders {
+  padding: 30px 50px;
+
+  .search-wrapper {
+    text-align: right;
+  }
+  .search-form {
+    display: flex;
+  }
+
+  .search-form > * {
+    margin: 10px;
+  }
+
+  .table-wrapper {
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px $box-shadow-normal;
+
+    tr, td, th {
+      margin: auto;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    td {
+      .order-status {
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

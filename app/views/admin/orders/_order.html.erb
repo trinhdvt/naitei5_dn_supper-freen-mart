@@ -1,0 +1,12 @@
+ <tr>
+    <td><%= order.receiver_name %></td>
+    <td><%= order.phone %></td>
+    <td>
+        <span class="order-status bg-<%= status_color order.status %>">
+            <%= t "statuses.#{order.status}" %>
+        </span>
+    </td>
+    <td><%= number_to_currency order.total %></td>
+    <td><%= order.created_at.to_date %></td>
+    <td><%= link_to t("admin.orders.index.edit"), "#" %></td>
+</tr>

@@ -7,13 +7,17 @@ en:
       sign_in: "Sign in"
       sign_up: "Sign up"
       cart: "Cart"
-      account: "Account"
       orders: "Orders"
       settings: "Settings"
       sign_out: "Sign out"
     footer:
       en: "English"
       vi: "Vietnamese"
+    admin:
+      users: "Users"
+      categories: "Categories"
+      products: "Products"
+      orders: "Orders"
 
   shared:
     error_messages:
@@ -95,3 +99,24 @@ en:
       product_price: "Price"
       quantity: "Quantity"
       total: "Total"
+
+  admin:
+    orders:
+      index:
+        title: "Orders"
+        status: "Status"
+        search: "Search"
+        name: "Name"
+        phone: "Phone"
+        status: "Status"
+        total: "Total"
+        order_date: "Order date"
+        action: "Action"
+        edit: "Edit"
+
+  statuses:
+    canceled: "Canceled"
+    pending: "Pending"
+    delivering: "Delivering"
+    received: "Received"
+    rejected: "Rejected"

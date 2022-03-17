@@ -10,5 +10,10 @@ Rails.application.routes.draw do
     resources :account_activations, only: :edit
     resources :products, only: :show
     resources :cart, only: %i(index, create)
+
+    namespace :admin do
+      root "orders#index"
+      resources :orders, only: :index
+    end
   end
 end
