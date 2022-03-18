@@ -23,6 +23,10 @@ module CartsHelper
     set_cookie CART_KEY, cart
   end
 
+  def empty_cart
+    set_cookie CART_KEY, {}
+  end
+
   private
 
   def set_cookie key, value

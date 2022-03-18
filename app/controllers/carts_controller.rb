@@ -1,8 +1,8 @@
-class CartController < ApplicationController
-  before_action :handle_param_quantity, :load_product, only: :create
-  before_action :load_cart_products, :verify_cart, only: :index
+class CartsController < ApplicationController
+  before_action :load_cart_products, :verify_cart, only: :show
+  before_action :handle_param_quantity, :load_product, only: %i(create update)
 
-  def index; end
+  def show; end
 
   def create
     current_qtt = quantity_in_cart @product.id
@@ -12,6 +12,31 @@ class CartController < ApplicationController
     else
       update_cart @product.id, new_qtt
       flash.now[:success] = t ".success"
+    end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    flash.now[:warning] = t ".insufficient" if @quantity > @product.quantity
+    @new_qtt = [@quantity, @product.quantity].min
+    update_cart @product.id, @new_qtt
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    @product_id = params[:pid]
+    if @product_id.nil?
+      empty_cart
+      flash[:success] = t ".empty_cart"
+      return redirect_to root_url
+    else
+      update_cart @product_id, 0
     end
 
     respond_to do |format|

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     delete "/signout", to: "sessions#destroy"
     resources :account_activations, only: :edit
     resources :products, only: :show
-    resources :cart, only: %i(index, create)
+    resource :cart, except: %i(new edit)
 
     namespace :admin do
       root "orders#index"

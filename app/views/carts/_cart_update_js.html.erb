@@ -1,0 +1,65 @@
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+    });
+
+    $(document).ready(() => {
+        // function to submit new quantity
+        const update_quantity = (pid, step) => {
+            let qtt = parseInt($(`#input-qtt-${pid}`).val());
+            qtt += step;
+            let data = {
+                cart: {
+                    product_id: pid,
+                    quantity: qtt,
+                }
+            }
+            if (qtt > 0) {
+                $.ajax({
+                    url: `<%= cart_path %>`,
+                    type: 'PUT',
+                    data
+                });
+            }
+        };
+
+        const qtt_input = $('input.quantity_input[type="text"]');
+        // ensure that the quantity input is a number
+        qtt_input.keypress(event => {
+            if (event.key.replace(/[^\d]/g, '') === '')
+                event.preventDefault();
+        });
+
+        qtt_input.each(function () {
+            // memorize the pre value
+            $(this).on('focus', () => {
+                $(this).data('oldVal', $(this).val());
+            });
+            $(this).on('blur', () => {
+                let newValue = parseInt($(this).val());
+                $(this).val(isNaN(newValue) ? 1 : Math.max(1, newValue));
+
+                // if the value is changed, update the total
+                let oldValue = parseInt($(this).data('oldVal'));
+                if (oldValue !== newValue) {
+                    const pid = $(this).attr('id').replace('input-qtt-', '')
+                    update_quantity(pid, 0);
+                }
+            });
+        });
+
+        $('button.btn-qtt_decr').each(function () {
+            $(this).on('click', () => {
+                const pid = $(this).attr('pid');
+                update_quantity(pid, -1);
+            });
+        });
+
+        $('button.btn-qtt_incr').each(function () {
+            $(this).on('click', () => {
+                const pid = $(this).attr('pid');
+                update_quantity(pid, 1);
+            });
+        });
+    });
+</script>

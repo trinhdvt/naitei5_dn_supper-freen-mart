@@ -7,16 +7,19 @@
   <div class="col-md-2 text-center text-important-bg"><%= t ".quantity" %></div>
   <div class="col-md-2 text-right text-important-bg"><%= t ".total" %></div>
   <div class="col-md-1">
-    <%= link_to "#", class: "color-black" do %>
+    <%= link_to(cart_path, method: :delete, remote: true,
+                data: { confirm: t(".del_all") }, class: "color-black") do %>
       <span class="glyphicon glyphicon-trash"></span>
     <% end %>
   </div>
 </div>
 
 <% @products.each_with_index do |prod, idx| %>
-  <div class="row cart_items">
+  <div id="cart_item_<%= prod.id %>" class="row cart_items">
     <div class="col-md-1">
-      <input type="checkbox" class="checkbox m-auto">
+      <input type="checkbox" class="checkbox m-auto"
+             name="prod-selector" value="<%= prod.id %>"
+      >
     </div>
 
     <div class="col-md-4">
@@ -30,26 +33,33 @@
 
     <div class="col-md-2">
       <div class="input_quantity_group m-0">
-        <button id="btn-qtt_decr" class="quantity_btn" type="button">
+        <button pid="<%= prod.id %>" class="quantity_btn btn-qtt_decr" type="button">
           <span class="glyphicon glyphicon-minus"></span>
         </button>
 
-        <input type="text" class="quantity_input text-center full-width" value="<%= @quantity[idx] %>">
+        <input type="text" class="quantity_input text-center full-width"
+               value="<%= @quantity[idx] %>" id="input-qtt-<%= prod.id %>"
+        >
 
-        <button id="btn-qtt_incr" class="quantity_btn" type="button">
+        <button pid="<%= prod.id %>" class="quantity_btn btn-qtt_incr" type="button">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       </div>
     </div>
 
-    <div class="col-md-2 color-red text-important text-right">
+    <div class="col-md-2 color-red text-important text-right"
+         id="total-<%= prod.id %>"
+    >
       <%= number_to_currency @quantity[idx] * prod.price %>
     </div>
 
     <div class="col-md-1">
-      <%= link_to "#", class: "color-black" do %>
+      <%= link_to (cart_path(pid: prod.id)), method: :delete, remote: true,
+                  data: { confirm: t(".del") }, class: "color-black" do %>
         <span class="glyphicon glyphicon-trash"></span>
       <% end %>
     </div>
   </div>
 <% end %>
+
+<%= render "cart_update_js" %>

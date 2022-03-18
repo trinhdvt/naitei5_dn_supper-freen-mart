@@ -1,0 +1,3 @@
+$('#total-<%= @product.id %>').text('<%= number_to_currency @product.price * @new_qtt %>');
+$('#input-qtt-<%= @product.id %>').val('<%= @new_qtt %>');
+<%= toastr_flash %>

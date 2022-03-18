@@ -18,6 +18,8 @@ en:
       categories: "Categories"
       products: "Products"
       orders: "Orders"
+    header_admin:
+      sign_out: "Sign Out"
 
   shared:
     error_messages:
@@ -83,7 +85,7 @@ en:
     create:
       unactivated_message: "Account not activated. Check your email for the activation link."
       failure_message: "Invalid email/password combination"
-  cart:
+  carts:
     insufficient: "Amount of product is over quotas"
     invalid_qtt: "Quantity must be greater than zero"
     create:
@@ -99,6 +101,10 @@ en:
       product_price: "Price"
       quantity: "Quantity"
       total: "Total"
+      del_all: "Delete all?"
+      del: "Delete this item?"
+    destroy:
+      empty_cart: "Your cart is empty"
 
   admin:
     orders:
@@ -108,7 +114,6 @@ en:
         search: "Search"
         name: "Name"
         phone: "Phone"
-        status: "Status"
         total: "Total"
         order_date: "Order date"
         action: "Action"
