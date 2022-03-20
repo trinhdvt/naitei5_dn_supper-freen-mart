@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_14_040945) do
+ActiveRecord::Schema.define(version: 2022_03_18_085119) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2022_03_14_040945) do
     t.decimal "rating", precision: 10
     t.string "image"
     t.bigint "category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["slug"], name: "unique_product_slug", unique: true
   end

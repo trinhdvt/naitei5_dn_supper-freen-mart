@@ -1,0 +1,17 @@
+<%= provide :title, t(".title") %>
+
+<div class="order-details">
+  <%= render "shared/order_details", order: @order %>
+
+  <div class="admin-status-update">
+    <div>
+      <%= form_tag admin_order_path, class: "search-form", method: :put do %>
+        <%= label_tag :status, t(".status") %>
+        <%= select_tag :status,
+            options_for_select(status_with_key),
+            class: "status-select" %>
+        <%= submit_tag t(".update"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

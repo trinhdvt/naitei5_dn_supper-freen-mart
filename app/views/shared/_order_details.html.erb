@@ -1,0 +1,75 @@
+<div class="heading">
+  <span>
+    <%= t ".heading" %> -
+  </span>
+  <span>
+    <%= t "statuses.#{order.status}" %>
+  </span>
+</div>
+
+<div class="date">
+  <%= t ".order_date" %>:
+  <%= order.created_at.to_date %>
+</div>
+
+<div class="info">
+  <div class="title"><%= t ".receiver_info" %>:</div>
+  <div class="content">
+    <p class="receiver-name"><%= order.receiver_name %></p>
+
+    <p>
+      <span><%= t ".receiver_address" %>:</span>
+      <%= order.deliver_address %>
+    </p>
+
+    <p>
+      <span><%= t ".receiver_phone" %>:</span>
+      <%= order.phone %>
+    </p>
+  </div>
+</div>
+
+<div class="table-wrapper">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t ".product" %></th>
+        <th><%= t ".price" %></th>
+        <th><%= t ".quantity" %></th>
+        <th><%= t ".notional_price" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% order.order_items.each do |item| %>
+        <tr>
+          <td>
+            <div class="product-item">
+              <img src=<%= item.product.image %> alt=<%= item.product.name %>>
+
+              <%= link_to item.product.name, product_path(id: item.product.slug) %>
+            </div>
+          </td>
+
+          <td><%= number_to_currency item.price %></td>
+          <td><%= item.quantity %></td>
+
+          <td>
+            <%= number_to_currency(
+                total_price_quantity(item.price, item.quantity))
+            %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="3" class="total-title">
+          <span><%= t ".total" %>:</span>
+        </td>
+
+        <td class="total-number"><%= number_to_currency @order.total %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

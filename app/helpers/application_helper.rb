@@ -19,4 +19,14 @@ module ApplicationHelper
 
     sanitize("<script>#{toastr_js.join('\n')}</script>") if toastr_js.present?
   end
+
+  def render_with_msg path, status, msg
+    flash.now[status] = msg
+    render path
+  end
+
+  def redirect_with_msg path, status, msg
+    flash[status] = msg
+    redirect_to path
+  end
 end

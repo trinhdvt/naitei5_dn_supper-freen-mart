@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root "orders#index"
-      resources :orders, only: :index
+      resources :orders, only: %i(index show update)
     end
   end
 end
