@@ -1,5 +1,6 @@
 regex:
   email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
+  vn_phone: !ruby/regexp '/(((\+|)84)|0)([35789])+([0-9]{8})\b/'
 
 digits:
   name_max_length: 50

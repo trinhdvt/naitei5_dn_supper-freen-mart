@@ -3,6 +3,22 @@
         headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
     });
 
+    function getSelectedProduct() {
+        return $('input[name="prod-selector"]:checked').map(function () {
+            return $(this).val();
+        }).get();
+    }
+
+    function getTotalPrice() {
+        const selectedProducts = getSelectedProduct();
+        $.get(`<%= total_cart_path %>`, {
+            product_ids: selectedProducts
+        }).done(() => {
+            $('#submit-order-btn').attr('disabled', selectedProducts.length === 0);
+            $('#selected_amount').text(selectedProducts.length);
+        });
+    }
+
     $(document).ready(() => {
         // function to submit new quantity
         const update_quantity = (pid, step) => {
@@ -19,9 +35,29 @@
                     url: `<%= cart_path %>`,
                     type: 'PUT',
                     data
-                });
+                }).done(getTotalPrice);
             }
         };
+
+        $('a.del-product[data-remote]').each(function () {
+            $(this).bind("ajax:success", function () {
+                const pid = $(this).data('pid');
+                $(`#cart_item_${pid}`).remove();
+                getTotalPrice();
+            });
+        });
+
+        const allCheckCB = $('#all-check');
+        allCheckCB.click(() => {
+            let isTrue = $('#all-check').prop("checked");
+            $('input[name="prod-selector"]').prop("checked", isTrue);
+            getTotalPrice();
+        });
+
+        $('input[name="prod-selector"][type="checkbox"]').bind('click', () => {
+            allCheckCB.prop("checked", false);
+            getTotalPrice();
+        });
 
         const qtt_input = $('input.quantity_input[type="text"]');
         // ensure that the quantity input is a number

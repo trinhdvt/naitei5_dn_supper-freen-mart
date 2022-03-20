@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :orders, through: :order_items
 
+  scope :in_ids, ->(ids){where id: ids}
   scope :newest, ->{order created_at: :desc}
   scope :trending, (lambda do
     joins(order_items: [:order])
@@ -17,6 +18,10 @@ class Product < ApplicationRecord
     order_items.joins(:order)
                .where(orders: {status: Order.statuses[:received]})
                .sum(:quantity)
+  end
+
+  def final_price quantity
+    price * quantity
   end
 
   private

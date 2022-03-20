@@ -23,8 +23,12 @@ module CartsHelper
     set_cookie CART_KEY, cart
   end
 
-  def empty_cart
-    set_cookie CART_KEY, {}
+  def empty_cart product_ids = nil
+    if product_ids.is_a? Array
+      product_ids.each{|id| update_cart id, 0}
+    else
+      set_cookie CART_KEY, {}
+    end
   end
 
   private

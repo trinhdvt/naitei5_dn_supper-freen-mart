@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def logged_in_check
+    return if logged_in?
+
+    flash[:warning] = t "users.not_logged_in"
+    store_location
+    redirect_to signin_url
+  end
 end

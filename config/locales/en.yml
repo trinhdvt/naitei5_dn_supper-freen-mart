@@ -51,6 +51,7 @@ en:
     create:
       success_message: "Please check your email to activate your account."
       failure_message: "Registration failed!"
+    not_logged_in: "Please sign in first!"
 
   activerecord:
     attributes:
@@ -125,3 +126,7 @@ en:
     delivering: "Delivering"
     received: "Received"
     rejected: "Rejected"
+  orders:
+    create:
+      success: "Your order has been placed! Please wait for your order to be processed."
+    invalid_products: "Invalid product in cart"
