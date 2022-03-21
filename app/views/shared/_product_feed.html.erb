@@ -1,9 +1,8 @@
 <section class="wrapper">
-  <h3><%= header %></h3>
   <div class="products">
     <ul>
-      <%= render products %>
+      <%= render @products %>
     </ul>
-    <%== pagy_bootstrap_nav(pagy) %>
+    <%== pagy_bootstrap_nav @pagy %>
   </div>
 </section>

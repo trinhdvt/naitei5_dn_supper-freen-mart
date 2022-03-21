@@ -1,5 +1,5 @@
 <li class="main-product" id="product-<%= product.id %>">
-  <div class="img-product">
+  <div class="img-product thumbnail">
     <%= image_tag product.image, alt: product.name, class: "img-prd" %>
   </div>
   <div class="content-product">
@@ -10,9 +10,9 @@
       <div class="price">
         <span class="money"><%= number_to_currency(product.price) %></span>
       </div>
-      <button type="button" class="btn btn-cart">
-        <%= t ".add_product" %>
-      </button>
+      <h4>
+        <%= "#{t("products.show.sold")} #{product.sold_count}" %>
+      </h4>
     </div>
   </div>
 </li>
