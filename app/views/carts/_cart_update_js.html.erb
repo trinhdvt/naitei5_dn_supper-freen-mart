@@ -1,8 +1,4 @@
 <script type="text/javascript">
-    $.ajaxSetup({
-        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
-    });
-
     function getSelectedProduct() {
         return $('input[name="prod-selector"]:checked').map(function () {
             return $(this).val();
@@ -20,6 +16,10 @@
     }
 
     $(document).ready(() => {
+        $.ajaxSetup({
+            headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
+        });
+
         // function to submit new quantity
         const update_quantity = (pid, step) => {
             let qtt = parseInt($(`#input-qtt-${pid}`).val());

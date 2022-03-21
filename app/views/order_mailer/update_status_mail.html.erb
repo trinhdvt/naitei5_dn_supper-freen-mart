@@ -1,0 +1,8 @@
+<h1><%= t "base_title" %></h1>
+
+<h3>
+  <%= t ".title" %> <%= link_to "##{@order.id}", "#" %>
+</h3>
+
+<p><%= "#{t("order_mailer.greeting")} #{@user.name}" %>, </p>
+<p><%= t ".#{@order.status}" %></p>

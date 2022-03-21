@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   def create
     if @order.save
       empty_cart @products.ids
+      @order.send_order_success_email
 
       flash[:success] = t ".success"
       return redirect_to root_url

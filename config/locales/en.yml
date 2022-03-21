@@ -152,3 +152,18 @@ en:
     create:
       success: "Your order has been placed! Please wait for your order to be processed."
     invalid_products: "Invalid product in cart"
+  order_mailer:
+    greeting: "Hi"
+    order_success_mail:
+      subject: "Order at Super Green Mart"
+      title: "Order "
+      body: "Your order has been placed! Please wait for your order to be processed. Thank you for shopping at Super Green Mart!"
+      receiver_info: "Receiver information"
+      order_details: "Order details"
+    update_status_mail:
+      title: "Order status update - "
+      subject: "Order at Super Green Mart"
+      canceled: "Your order has been canceled successfully. Thank you for visiting Green Supermarket."
+      delivering: "Your order is being shipped. Please stay in touch by phone."
+      received: "The order has been delivered successfully. Have a nice evening!"
+      rejected: "Your order has been rejected. We sincerely apologize for this, hope for your understanding."
