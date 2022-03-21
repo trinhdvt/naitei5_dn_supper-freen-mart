@@ -1,0 +1,21 @@
+<%= provide :title, t(".title") %>
+
+<div class="order-list">
+  <div>
+    <%= form_tag orders_path, class: "search-form", method: :get do %>
+      <%= label_tag :status, t(".status") %>
+      <%= select_tag :status,
+          options_for_select(status_with_key),
+          class: "form-control",
+          include_blank: true %>
+        <%= submit_tag t(".search"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <h3><%= t ".heading" %></h3>
+
+  <div class="products-wrapper">
+    <%= render @orders %>
+  </div>
+
+  <%== pagy_bootstrap_nav @pagy %>
+</div>

@@ -2,6 +2,14 @@ class OrdersController < ApplicationController
   before_action :logged_in_check, only: :create
   before_action :load_selected_products, :build_order_with_items, only: :create
 
+  def index
+    @orders = current_user.orders
+                          .includes(order_items: :product)
+                          .status_search(params[:status]).newest
+
+    @pagy, @orders = pagy @orders, items: Settings.item.max_item_10
+  end
+
   def create
     if @order.save
       empty_cart @products.ids

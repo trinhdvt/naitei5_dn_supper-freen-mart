@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resource :cart, except: %i(new edit) do
       get "/total", to: "carts#total"
     end
-    resources :orders, only: :create
+    resources :orders, only: %i(index create)
 
     namespace :admin do
       root "orders#index"
