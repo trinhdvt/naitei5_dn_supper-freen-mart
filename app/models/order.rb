@@ -10,6 +10,13 @@ class Order < ApplicationRecord
     rejected: 4
   }, _prefix: true
 
+  VN_PHONE_REGEX = Settings.regex.vn_phone.freeze
+
+  validates :receiver_name, :deliver_address, presence: true
+  validates :phone, format: {with: VN_PHONE_REGEX}, presence: true
+
+  before_create :set_default_status
+
   scope :newest, ->{order created_at: :desc}
   scope :status_search, ->(status){where(status: status) if status.present?}
 
@@ -19,5 +26,20 @@ class Order < ApplicationRecord
         [I18n.t("statuses.#{status}"), id]
       end
     end
+  end
+
+  def total
+    # calc total of order in the first time
+    unless self[:total]
+      self[:total] = order_items.map{|item| item.quantity * item.price}.sum
+      save
+    end
+    self[:total]
+  end
+
+  private
+
+  def set_default_status
+    self.status = Order.statuses[:pending]
   end
 end

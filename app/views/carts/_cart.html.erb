@@ -1,6 +1,6 @@
 <div class="row m-btm-30">
   <div class="col-md-1 text-center">
-    <input type="checkbox" class="checkbox m-auto">
+    <input id="all-check" type="checkbox" class="checkbox m-auto">
   </div>
   <div class="col-md-4 text-capitalize text-important-bg"><%= t ".product_name" %></div>
   <div class="col-md-2 text-right text-important-bg"><%= t ".product_price" %></div>
@@ -55,7 +55,7 @@
 
     <div class="col-md-1">
       <%= link_to (cart_path(pid: prod.id)), method: :delete, remote: true,
-                  data: { confirm: t(".del") }, class: "color-black" do %>
+                  data: { confirm: t(".del"), pid: prod.id }, class: "color-black del-product" do %>
         <span class="glyphicon glyphicon-trash"></span>
       <% end %>
     </div>

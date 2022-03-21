@@ -57,6 +57,7 @@ vi:
     create:
       success_message: "Hãy kiểm tra email của bạn để kích hoạt tài khoản"
       failure_message: "Đăng ký thất bại!"
+    not_logged_in: "Vui lòng đăng nhập trước"
 
   activerecord:
     attributes:
@@ -64,6 +65,11 @@ vi:
         name: "Tên"
         password: "Mật khẩu"
         password_confirmation: "Mật khẩu xác nhận"
+      order:
+        receiver_name: "Tên người nhận"
+        phone: "Số điện thoại"
+        deliver_address: "Địa chỉ giao hàng"
+        order_items: "Sản phẩm trong giỏ hàng"
 
   user_mailer:
     account_activation:
@@ -133,3 +139,7 @@ vi:
     delivering: "Đang vận chuyển"
     received: "Đã nhận"
     rejected: "Đã từ chối"
+  orders:
+    create:
+      success: "Đơn hàng của bạn đã được ghi nhận. Vui lòng đợi!"
+    invalid_products: "Có sản phẩm không hợp lệ trong giỏ hàng"

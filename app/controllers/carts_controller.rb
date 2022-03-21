@@ -44,6 +44,16 @@ class CartsController < ApplicationController
     end
   end
 
+  def total
+    @total = Product.where(id: params[:product_ids])
+                    .map{|p| p.final_price(quantity_in_cart(p.id))}
+                    .sum
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def handle_param_quantity
