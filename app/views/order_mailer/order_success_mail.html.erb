@@ -1,0 +1,61 @@
+<h1><%= t "base_title" %></h1>
+
+<h3>
+  <%= t ".title" %> <%= link_to "##{@order.id}", "#" %>
+</h3>
+
+<p><%= "#{t("order_mailer.greeting")} #{@user.name}" %>, </p>
+<p><%= t ".body" %></p>
+
+<h3><%= t ".receiver_info" %></h3>
+<ul>
+  <li><b><%= t "carts.order_form.receiver" %>:</b> <%= @order.receiver_name %></li>
+  <li><b><%= t "carts.order_form.address" %>:</b> <%= @order.deliver_address %></li>
+  <li><b><%= t "carts.order_form.phone" %>:</b> <%= @order.phone %></li>
+</ul>
+
+<h3><%= t ".order_details" %></h3>
+<table>
+  <thead>
+  <tr>
+    <th><%= t "carts.cart.product_name" %></th>
+    <th><%= t "carts.cart.quantity" %></th>
+    <th><%= t "carts.cart.product_price" %></th>
+    <th><%= t "carts.cart.total" %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @order.order_items.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.quantity %></td>
+      <td><%= number_to_currency item.price %></td>
+      <td><%= number_to_currency item.price * item.quantity %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="2"></td>
+    <td>
+      <b><%= t "carts.order_form.total" %>:</b>
+    </td>
+    <td><b><%= number_to_currency @order.total %></b></td>
+  </tr>
+  </tbody>
+</table>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>

@@ -7,7 +7,6 @@ $(document).ready(() => {
     if (selected.length > 0) {
       $.ajax({
         url: `/orders`,
-        headers: {"X-CSRF-Token": $("meta[name='csrf-token']").attr("content")},
         type: 'POST',
         data
       });

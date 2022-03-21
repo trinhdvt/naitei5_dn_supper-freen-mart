@@ -143,3 +143,17 @@ vi:
     create:
       success: "Đơn hàng của bạn đã được ghi nhận. Vui lòng đợi!"
     invalid_products: "Có sản phẩm không hợp lệ trong giỏ hàng"
+  order_mailer:
+    greeting: "Xin chào"
+    order_success_mail:
+      subject: "Đơn hàng tại Siêu thị Xanh"
+      title: "Đơn hàng"
+      body: "Đơn hàng của bạn đã được hệ thống ghi nhận và đang trong quá trình xử lý. Vui lòng giữ liên lạc qua điện thoại. Cảm ơn bạn đã đặt hàng tại Siêu thị xanh"
+      receiver_info: "Thông tin nhận hàng"
+      order_details: "Chi tiết đơn hàng"
+    update_status_mail:
+      title: "Tình trạng đơn hàng"
+      canceled: "Đơn hàng của bạn đã được huỷ thành công. Cảm ơn bạn đã ghé qua Siêu thị Xanh."
+      delivering: "Đơn hàng của bạn đang được vận chuyển. Vui lòng giữ liên lạc qua điện thoại."
+      received: "Đơn hàng đã được giao thành công. Chúc bạn buổi tối vui vẻ!"
+      rejected: "Đơn hàng của bạn đã bị huỷ. Chúng tôi thành thật xin lỗi về chuyện này, mong bạn thông cảm."

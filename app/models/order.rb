@@ -37,6 +37,14 @@ class Order < ApplicationRecord
     self[:total]
   end
 
+  def send_order_success_email
+    OrderMailer.order_success_mail(self).deliver_now
+  end
+
+  def send_update_status_email
+    OrderMailer.update_status_mail(self).deliver_now
+  end
+
   private
 
   def set_default_status
