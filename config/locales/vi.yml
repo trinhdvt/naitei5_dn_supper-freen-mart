@@ -25,6 +25,17 @@ vi:
     error_messages:
       prefix: "Bạn có %{err_suffix} "
       singular: "lỗi"
+    order_details:
+      heading: "Chi tiết đơn hàng"
+      order_date: "Ngày đặt hàng"
+      receiver_info: "Thông tin người nhận"
+      receiver_address: "Địa chỉ"
+      receiver_phone: "Điện thoại"
+      product: "Sản phẩm"
+      price: "Giá"
+      quantity: "Số lượng"
+      notional_price: "Tạm tính"
+      total: "Tổng cộng"
 
   products:
     product:
@@ -132,6 +143,16 @@ vi:
         order_date: "Ngày đặt"
         action: "Hành động"
         edit: "Chỉnh sửa"
+      show:
+        title: "Chi tiết đơn hàng"
+        status: "Trạng thái"
+        update: "Cập nhật"
+
+      failed_update: "Cập nhật trạng thái thất bại"
+      successful_update: "Cập nhật trạng thái thành công"
+      not_found: "Không tìm thấy đơn hàng"
+      out_of_stock: "Sản phẩm %{name} đã hết hàng"
+
 
   statuses:
     canceled: "Đã hủy"

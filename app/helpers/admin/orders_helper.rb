@@ -13,4 +13,14 @@ module Admin::OrdersHelper
       :danger
     end
   end
+
+  def total_price_quantity price, quantity
+    price * quantity
+  end
+
+  def status_with_key
+    Order.statuses.map do |status, _|
+      [t("statuses.#{status}"), status]
+    end
+  end
 end

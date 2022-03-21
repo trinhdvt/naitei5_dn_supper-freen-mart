@@ -25,6 +25,18 @@ en:
     error_messages:
       prefix: "The form contains %{err_suffix} "
       singular: "error"
+    order_details:
+      heading: "Order Details"
+      order_date: "Order date"
+      receiver_info: "Receiver's information"
+      receiver_address: "Address"
+      receiver_phone: "Phone"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      notional_price: "Notional Price"
+      total: "Total"
+
   products:
     product:
       add_product: "Add to cart"
@@ -119,6 +131,16 @@ en:
         order_date: "Order date"
         action: "Action"
         edit: "Edit"
+      show:
+        title: "Order Details"
+        status: "Status"
+        update: "Update"
+
+      failed_update: "Status update failed"
+      successful_update: "Status update failed"
+      not_found: "Order not found"
+      out_of_stock: "Product %{name} is out of stock"
+
 
   statuses:
     canceled: "Canceled"
