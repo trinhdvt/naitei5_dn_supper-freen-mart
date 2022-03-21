@@ -1,9 +1,11 @@
-<% provide :title, t("base_title") %>
-
 <div class="home">
-  <%= render "shared/product_feed", products: @trending_products,
-             pagy: @trending_pagy, header: t(".trending") %>
-  <hr>
-  <%= render "shared/product_feed", products: @new_products,
-             pagy: @new_pagy, header: t(".newest") %>
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="<%= "active" if @type == :newest %>">
+      <%= link_to t(".newest"), root_path(type: "newest") %>
+    </li>
+    <li role="presentation" class="<%= "active" if @type == :trending %>">
+      <%= link_to t(".trending"), root_path(type: "trending") %>
+    </li>
+  </ul>
+  <%= render "shared/product_feed" %>
 </div>
