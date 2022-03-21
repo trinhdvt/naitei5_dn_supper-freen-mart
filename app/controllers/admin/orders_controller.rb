@@ -19,6 +19,7 @@ class Admin::OrdersController < Admin::AdminController
                                :warning, errors_msg)
     end
 
+    @order.send_status_updated_email
     redirect_with_msg(admin_order_path,
                       :success, t(".successful_update"))
   end
