@@ -1,0 +1,37 @@
+<div class="product-wrapper">
+  <div class="header">
+    <%= t "statuses.#{order.status}" %>
+  </div>
+
+  <div class="product">
+    <div>
+      <div class="details">
+        <%= image_tag first_prod(order).image %>
+
+        <%= link_to product_path(id: first_prod(order).slug) do %>
+          <%= first_prod(order).name %>
+        <% end %>
+      </div>
+      <div class="left-products">
+        <%= left_products order.order_items %>
+      </div>
+    </div>
+    <div>
+      <%= number_to_currency order.order_items.first.price %>
+    </div>
+  </div>
+
+  <div class="footer" >
+    <div class="total">
+      <div class="title">
+        <%= t "orders.index.total" %>
+      </div>
+      <%= number_to_currency order.total %>
+    </div>
+    <%= link_to "#" do %>
+      <button class="btn btn-primary">
+        <%= t "orders.index.details_btn" %>
+      </button>
+    <% end %>
+  </div>
+</div>

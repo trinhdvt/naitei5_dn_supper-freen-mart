@@ -29,7 +29,7 @@
               <% if is_admin? %>
                 <li><%= link_to "Admin", admin_root_path %></li>
               <% end %>
-              <li><%= link_to t(".orders"), "#" %></li>
+              <li><%= link_to t(".orders"), orders_path %></li>
               <li><%= link_to t(".settings"), "#" %></li>
               <li><%= link_to t(".sign_out"), signout_path, method: :delete %></li>
             </ul>

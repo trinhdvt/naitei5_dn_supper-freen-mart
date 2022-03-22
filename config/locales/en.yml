@@ -141,7 +141,6 @@ en:
       not_found: "Order not found"
       out_of_stock: "Product %{name} is out of stock"
 
-
   statuses:
     canceled: "Canceled"
     pending: "Pending"
@@ -152,6 +151,16 @@ en:
     create:
       success: "Your order has been placed! Please wait for your order to be processed."
     invalid_products: "Invalid product in cart"
+    index:
+      title: "My Orders"
+      heading: "Oders"
+      status: "Statuts"
+      search: "Search"
+      details_btn: "View details"
+      total: "Total"
+      product_count: "%{count} left"
+      singular: "product"
+
   order_mailer:
     greeting: "Hi"
     order_success_mail:

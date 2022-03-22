@@ -153,7 +153,6 @@ vi:
       not_found: "Không tìm thấy đơn hàng"
       out_of_stock: "Sản phẩm %{name} đã hết hàng"
 
-
   statuses:
     canceled: "Đã hủy"
     pending: "Đang chờ"
@@ -164,6 +163,15 @@ vi:
     create:
       success: "Đơn hàng của bạn đã được ghi nhận. Vui lòng đợi!"
     invalid_products: "Có sản phẩm không hợp lệ trong giỏ hàng"
+    index:
+      title: "Đơn hàng của tôi"
+      heading: "Các đơn hàng"
+      status: "Trạng thái"
+      search: "Tìm kiếm"
+      details_btn: "Xem chi tiết"
+      total: "Tổng tiền"
+      product_count: "Còn %{count} "
+      singular: "sản phẩm"
   order_mailer:
     greeting: "Xin chào"
     order_success_mail:

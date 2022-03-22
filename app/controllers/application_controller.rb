@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include Pagy::Backend
   include CartsHelper
+  include Admin::OrdersHelper
 
   before_action :set_locale, :init_cart
 
