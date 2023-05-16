@@ -1,0 +1,15 @@
+name: Analyze code statically
+on: pull_request
+jobs:
+  misspell:
+    name: runner / misspell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: misspell
+        uses: reviewdog/action-misspell@v1
+        with:
+          locale: "US"
+          reporter: github-pr-review
+          ignore: uncommited,cancelled
+          fail_on_error: true
