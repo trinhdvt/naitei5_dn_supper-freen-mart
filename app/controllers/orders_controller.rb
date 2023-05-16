@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       empty_cart @products.ids
       @order.send_order_success_email
 
-      flash[:success] = t ".success"
+      flash[:success] = t ".sucess"
       return redirect_to root_url
     end
 
